@@ -35,10 +35,8 @@ func coordinateListHandler(rw http.ResponseWriter, r *http.Request) {
 	//This should really be refactored to use the go equivalent of vector/arraylist
 	//so this step isn't needed
 	var coordArray []Coordinate = make([]Coordinate, len(coords)) 
-	i := 0
-	for coordinate := range coords { 
-		coordArray[i] = coords[coordinate]
-		i++
+	for i := 0; i < len(coords); i++ {
+		coordArray[i] = coords[i]
 	}
 
 	jsonList, err := json.Marshal(coordArray)
