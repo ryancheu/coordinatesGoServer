@@ -36,7 +36,7 @@ func coordinateListHandler(rw http.ResponseWriter, r *http.Request) {
 	//so this step isn't needed
 	var coordArray []Coordinate = make([]Coordinate, len(coords)) 
 	for i := 0; i < len(coords); i++ {
-		coordArray[i] = coords[i]
+		coordArray[len(coords)-1-i] = coords[i]
 	}
 
 	jsonList, err := json.Marshal(coordArray)
