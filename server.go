@@ -5,11 +5,13 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 type Coordinate struct {
 	Lat  string
 	Long string
+	TimeStamp int64
 }
 
 //This should really use a list but I don't know how to do that yet in Golang
@@ -21,7 +23,7 @@ func coordinateAddHandler(rw http.ResponseWriter, r *http.Request) {
 	lat := query.Get("lat")
 	long := query.Get("long")
 
-	coord := Coordinate{lat, long}
+	coord := Coordinate{lat, long, time.Now().Unix()}
 	fmt.Println("New coordinate: ", coord)
 	coords[curIndex] = coord
 	curIndex++
