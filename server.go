@@ -25,8 +25,6 @@ func coordinateAddHandler(rw http.ResponseWriter, r *http.Request) {
 	fmt.Println("New coordinate: ", coord)
 	coords[curIndex] = coord
 	curIndex++
-	rw.Header().Set("Content-Type", "application/json")
-	rw.Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func coordinateListHandler(rw http.ResponseWriter, r *http.Request) {
