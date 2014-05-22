@@ -11,7 +11,7 @@ import (
 type Coordinate struct {
 	Lat  string
 	Long string
-	TimeStamp int64
+	Date int64
 }
 
 //This should really use a list but I don't know how to do that yet in Golang
